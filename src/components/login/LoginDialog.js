@@ -152,7 +152,7 @@ export default function LoginDialog({open,setopen}) {
         <Text variant='standard' label="Enter Email" name='Email' onChange={handlechange} required></Text>
         <Text variant='standard' label="Enter Password" name='Password' onChange={handlechange} required></Text>
         <Terms>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Terms>
-        {!validuser ? <></>: <Typography style={{color:"red",fontSize:"15px",textAlign:"center"}}>User exit. Please login to your account</Typography>}
+        {validuser ? <></>: <Typography style={{color:"red",fontSize:"15px",textAlign:"center"}}>User exit. Please login to your account</Typography>}
         <Button style={{textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white'} } onClick={formsubmit}>CONTINUE</Button>
         <Button style={{textTransform:'capitalize',color:"#2874f0",margin:"20px 0 0 0",fontSize:"15px",cursor:"pointer",boxShadow:"0.2px 0.2px 1px black"}} onClick={handlesignup}>Existing User? Log in</Button>
         </Rightbar>
