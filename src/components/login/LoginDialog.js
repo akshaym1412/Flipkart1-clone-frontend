@@ -75,7 +75,6 @@ export default function LoginDialog({open,setopen}) {
 
     const formsubmit=async()=>{
        let response=await authenticateSignup(userdetails);
-       console.log(response.data);
        if(response.data==="User exist"){
         setvaliduser(false);
        }
