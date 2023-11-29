@@ -1,9 +1,9 @@
 import axios from "axios";
 export const checkoutHandler = async (amount,Name) => {
 
-    const { data: { key } } = await axios.get("https://flipkart-li8x.onrender.com/api/getkey")
+    const { data: { key } } = await axios.get("https://flipkart1-clone-backend1.vercel.app/api/getkey")
 
-    const { data: { order } } = await axios.post(" https://flipkart-li8x.onrender.com/checkout", {
+    const { data: { order } } = await axios.post("https://flipkart1-clone-backend1.vercel.app/checkout", {
         amount
     })
 
