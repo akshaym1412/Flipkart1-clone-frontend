@@ -2,7 +2,7 @@ import { createSlice,createAsyncThunk  } from "@reduxjs/toolkit";
 import axios from "axios";
 
 export const fetchProduct=createAsyncThunk("Products",async ()=>{
-const {data}=await axios.get("https://flipkart-li8x.onrender.com/products");
+const {data}=await axios.get("https://flipkart1-clone-backend1.vercel.app/api/products");
 return data;
 })
 
