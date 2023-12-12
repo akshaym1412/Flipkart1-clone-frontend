@@ -18,7 +18,7 @@ display:"flex",
 [theme.breakpoints.down('sm')]:{
 flexDirection:"column",
 height:"100vh",
-width:"113%",
+width:"95%",
 marginLeft:0,
 padding:"20px 0px",
 backgroundColor:"#FFFFFF"
@@ -51,9 +51,8 @@ const ContentDiv=styled(Box)(({theme})=>({
     backgroundColor:"#FFFFFF",
    },
    [theme.breakpoints.down("sm")]:{
-    width:"102%",
+    width:"103%",
     paddingLeft:"0px",
-    marginLeft:0,
     backgroundColor:"#FFFFFF",
    }
 }))

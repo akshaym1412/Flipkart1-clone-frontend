@@ -15,6 +15,12 @@ const ColumnText = styled(TableRow)`
         margin-top: 10px;
     }
 `
+const Image=styled('img')(({theme})=>({
+  width:"390px",
+  [theme.breakpoints.down('sm')]:{
+    width:"330px"
+  }
+  }))
 const SmallText = styled(Box)`
     width:100;
     font-size: 14px;
@@ -65,7 +71,7 @@ const ProductDetails = ({users}) => {
                     </ColumnText>
                     <TableRow>
                         <TableCell colSpan={2}>
-                            <img src={adURL} alt="flipkart" style={{ width: 390 }} />
+                            <Image src={adURL} alt="flipkart"></Image>
                         </TableCell>
                     </TableRow>
                     <ColumnText>

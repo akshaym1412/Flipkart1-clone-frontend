@@ -20,17 +20,21 @@ flexDirection:"column",
 const Imagediv=styled(Box)(({theme})=>({
   padding:0,
 [theme.breakpoints.down('lg')]:{
-  width:"200px"
+  width:"100px"
 }
 }))
 const Image=styled('img')(({theme})=>({
   marginLeft:"50px",
+  height:"400px",
+  objectFit:"contain",
   [theme.breakpoints.down('lg')]:{
-    width:"200px",
-    marginLeft:"60px"
+    height:"400px",
+    marginLeft:"60px",
+   
   },
   [theme.breakpoints.down('sm')]:{
-    marginLeft:"20px"
+    marginLeft:"65px",
+    height:"300px"
   }
 }))
 const Addcart=styled(Box)(({theme})=>({
@@ -42,8 +46,9 @@ const Addcart=styled(Box)(({theme})=>({
   [theme.breakpoints.down('md')]:{
     margin:"10px 0"
   },
-  [theme.breakpoints.down('md')]:{
-    margin:"10px 0 0 20px"
+  [theme.breakpoints.down('sm')]:{
+    margin:"10px 0 0 0px",
+    width:"50%"
   }
 
 }))
@@ -70,7 +75,7 @@ export const ActionItem = ({users}) => {
     { users && 
     <LeftContainer>
       <Imagediv>
-        <Image src={users.img} style={{ width:"400px", height:"400px", objectFit:"contain"}}></Image>
+        <Image src={users.img}></Image>
         </Imagediv>
         <Addcart>
         <Button variant='contained' sx={{width:"225px",minWidth:"150px",height:"50px",backgroundColor:"orange"}} onClick={()=>(handleClick(users))}><Cart/>Add to Cart</Button>
