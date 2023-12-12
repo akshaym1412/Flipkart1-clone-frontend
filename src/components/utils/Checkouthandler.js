@@ -3,11 +3,7 @@ export const checkoutHandler = async (amount,Name) => {
 
     const { data: { key } } = await axios.get("https://flipkart1-clone-backend1-akshaym1412s-projects.vercel.app/api/getkey")
 
-<<<<<<< HEAD
-    const { data: { order } } = await axios.post("https://flipkart1-clone-backend1-akshaym1412s-projects.vercel.app/api/checkout", {
-=======
     const { data: { order } } = await axios.post("https://flipkart1-clone-backend1.vercel.app/api/checkout", {
->>>>>>> dfd5f45f79d696bd06f7a81d81e3294f85bc5a07
         amount
     })
 
