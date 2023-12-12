@@ -30,7 +30,7 @@ export default function Banner() {
         }
       };
   return (
-    <Carousel responsive={responsive} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true}  swipeable={false} draggable={false}>
+    <Carousel responsive={responsive} autoPlay={true} autoPlaySpeed={3000} arrows={false} showDots={true} infinite={true}  swipeable={false} draggable={false}>
     {sliderimages.map((data,index)=>{
      return(
      <Image src={data.URL} alt="a" key={index}></Image>
