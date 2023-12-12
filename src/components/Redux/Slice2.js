@@ -2,7 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import Axios from "axios";
 
 export const productone=createAsyncThunk("product",async(id)=>{
-   const {data}=await Axios.get(`https://flipkart1-clone-backend1.vercel.app/api/product/${id}`)
+   const {data}=await Axios.get(`https://flipkart1-clone-backend1-akshaym1412s-projects.vercel.app/api/product/${id}`)
    return data;
 })
 

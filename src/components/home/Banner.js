@@ -8,7 +8,8 @@ const Image = styled('img')(({ theme }) => ({
   height: 280,
   [theme.breakpoints.down('sm')]: {
       objectFit: 'cover',
-      height: 180
+      height: 180,
+      marginTop:"65px",
   }
 }));
 
@@ -32,7 +33,7 @@ export default function Banner() {
     <Carousel responsive={responsive} autoPlay={true} autoPlaySpeed={3000} showDots={true} infinite={true}  swipeable={false} draggable={false}>
     {sliderimages.map((data,index)=>{
      return(
-     <Image src={data.URL} alt="a" style={{marginTop:"12px"}} key={index}></Image>
+     <Image src={data.URL} alt="a" key={index}></Image>
      )
     }) 
     }

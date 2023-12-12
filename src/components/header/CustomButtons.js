@@ -50,7 +50,7 @@ export default function CustomButtons() {
    const naviagte=useNavigate();
 
    const {cart,totalquantity}=useSelector(state=>state.carts);
-   if(cart==[]){
+   if(cart===[]){
     totalquantity=0;
    }
     const handlechange=()=>{

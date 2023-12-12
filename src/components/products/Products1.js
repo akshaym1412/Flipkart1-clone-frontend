@@ -41,15 +41,15 @@ text-align:left;
 font-size:20px;
 `
 
-const Side = styled(Box)(({ theme }) => ({
-  [theme.breakpoints.down('lg')]: {
-    width:"15%",
-    objectFit:"cover"
-  },
-  [theme.breakpoints.down('md')]: {
-    display:"none",
-  },
-}));
+// const Side = styled(Box)(({ theme }) => ({
+//   [theme.breakpoints.down('lg')]: {
+//     width:"15%",
+//     objectFit:"cover"
+//   },
+//   [theme.breakpoints.down('md')]: {
+//     display:"none",
+//   },
+// }));
 
 
 

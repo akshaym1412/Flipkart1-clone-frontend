@@ -3,10 +3,11 @@ import { betweenimg } from '../images/listimages';
 import { Grid } from '@mui/material';
 import styled from '@emotion/styled';
 
-const Wrapper=styled(Grid)`
-display:"flex";
-justifyContent:"space-between";
-`
+const Wrapper=styled(Grid)(({theme})=>({
+  display:"flex",
+  justifyContent:"space-between",
+}))
+
 export default function MidSection() {
   return (
     <>

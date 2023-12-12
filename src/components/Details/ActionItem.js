@@ -29,6 +29,9 @@ const Image=styled('img')(({theme})=>({
     width:"200px",
     marginLeft:"60px"
   },
+  [theme.breakpoints.down('sm')]:{
+    marginLeft:"20px"
+  }
 }))
 const Addcart=styled(Box)(({theme})=>({
   display:"flex",
@@ -38,6 +41,9 @@ const Addcart=styled(Box)(({theme})=>({
   },
   [theme.breakpoints.down('md')]:{
     margin:"10px 0"
+  },
+  [theme.breakpoints.down('md')]:{
+    margin:"10px 0 0 20px"
   }
 
 }))

@@ -21,7 +21,8 @@ const Content=styled('div')(({theme})=>({
   [theme.breakpoints.down('sm')]: {
     margin: '65px 0 0 0',
     paddingLeft:"150px",
-    width:"100%"
+    width:"100%",
+    display:"none"
 }})
 );
 const ImageBox=styled(Box)(({theme})=>({

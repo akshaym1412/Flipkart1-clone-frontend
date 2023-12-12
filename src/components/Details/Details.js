@@ -8,7 +8,6 @@ import { Box } from '@mui/material';
 import { ActionItem } from './ActionItem';
 import styled from '@emotion/styled';
 import ProductDetails from './ProductDetails';
-import data from '../images/data';
 
 const Container=styled(Box)(({theme})=>({
 backgroundColor:"#FFFFFF",
@@ -19,6 +18,9 @@ display:"flex",
 [theme.breakpoints.down('sm')]:{
 flexDirection:"column",
 height:"100vh",
+width:"113%",
+marginLeft:0,
+padding:"20px 0px",
 backgroundColor:"#FFFFFF"
 },
 [theme.breakpoints.down('md')]:{
@@ -49,8 +51,9 @@ const ContentDiv=styled(Box)(({theme})=>({
     backgroundColor:"#FFFFFF",
    },
    [theme.breakpoints.down("sm")]:{
-    width:"100%",
-    paddingLeft:"10px",
+    width:"102%",
+    paddingLeft:"0px",
+    marginLeft:0,
     backgroundColor:"#FFFFFF",
    }
 }))
@@ -67,7 +70,7 @@ export default function Details() {
     <Header/>
     { users && Object.keys(users).length &&
     <Container >
-    <ImageDiv sx={{width:"45%"}}>
+    <ImageDiv >
       <ActionItem users={users}/>
     </ImageDiv>
     <ContentDiv sx={{width:"60%",padding:"20px 0 0 0"}}>
