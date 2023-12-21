@@ -46,6 +46,11 @@ padding-left: 50px;
     #maindiv{
         margin: 5px 10px;
     }
+    #imagediv img{
+        width: 70%;
+        margin: auto;
+       
+    }
     #contentdiv{
       overflow: hidden;
       flex: 1;
