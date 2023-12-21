@@ -1,0 +1,79 @@
+#maindiv{
+    display:flex;
+    height: 280px;
+    margin: 5px 20px;
+    background-color: white;
+}
+#imagediv{
+    width: 300px;
+    flex: 1;
+    margin-top: 10px;
+   
+}
+#imagediv img{
+   max-width: 100%;
+   height:80%;
+   display: block;
+   object-fit: contain;
+}
+#contentdiv{
+flex: 3;
+display: flex;
+}
+
+#contentdiv p{
+    font-weight: 700;
+    font-size: x-large;
+    }
+
+#pricediv {
+font-weight: 400;
+font-size: large;
+padding-left: 50px;
+}
+#pricediv p {
+    margin: 0;
+    }
+#price{
+ margin-top: 30px;
+}
+#price p{
+    margin-top: 8px;
+    font-weight: 400;
+    font-size: medium;
+   }
+@media only screen and (max-width: 700px) {
+    #maindiv{
+        margin: 5px 10px;
+    }
+    #contentdiv{
+      overflow: hidden;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+        }
+        #contentdiv span{
+            font-size: 13px;
+            }
+    #contentdiv ul{
+      font-size: 14px; 
+      display: none;
+    }
+    #contentdiv p{
+        font-weight: 700;
+        font-size: large;
+        }
+    #pricediv {
+            font-weight: 400;
+            font-size: large;
+            padding: 0;
+            }
+            #price{
+                margin-top: 10px;
+               }
+    #price p{
+            margin-top: 1px;
+            font-weight: 400;
+            font-size: medium;
+           }
+}
