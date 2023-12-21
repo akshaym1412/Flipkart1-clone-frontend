@@ -18,7 +18,11 @@ position:"relative",
 [theme.breakpoints.down("md")]:{
 flexDirection:"column",
 margin:"80px 50px 0 40px"
-}
+},
+[theme.breakpoints.down("sm")]:{
+    flexDirection:"column",
+    margin:"80px 30px 0 10px"
+    }
 }))
 const Side=styled(Box)(({theme})=>({
     width:"35%",
@@ -84,6 +88,12 @@ const Component = styled(Card)(({theme})=>({
         width:"158%"
         }
     }))
+const Delivery=styled(Box)(({theme})=>({
+        [theme.breakpoints.down("sm")]:{
+        display:"flex",
+        flexDirection:"column",
+            }
+        }))
 
 const LeftComponent = styled(Box)`
     margin: 20px; 
@@ -165,10 +175,10 @@ const handleorder=(price)=>{
                             <GroupButton data={data} totalquantity={totalquantity} totalprice={totalprice}/>
                         </LeftComponent>
                         <Box style={{ margin:"20px 20px 20px 40px" ,width:600}}>
-                            <Box style={{display:"flex",justifyContent:"space-between"}}>
-                            <span style={{fontWeight:"600"}}>{addEllipsis(data.title)}</span>
+                            <Delivery style={{display:"flex",justifyContent:"space-between"}}>
+                            <span style={{fontWeight:"600",marginBottom:"10px"}}>{addEllipsis(data.title)}</span>
                             <span style={{fontSize:"14px"}}>Delivery By {date.toDateString()}</span>
-                            </Box>
+                            </Delivery>
                             <SmallText>Seller:RetailNet
                                 <span><img src={fassured} alt="logo" style={{ width: 50, marginLeft: 10 }} /></span>
                             </SmallText>
