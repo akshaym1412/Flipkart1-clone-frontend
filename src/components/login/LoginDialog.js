@@ -19,6 +19,7 @@ const Leftbar=styled(Box)(({theme})=>({
   backgroundColor:"#2874f0",
   [theme.breakpoints.down('sm')]:{
      width:"35%",
+     display:"none"
     }
   }))
   const Typo=styled(Typography)(({theme})=>({
