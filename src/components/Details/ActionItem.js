@@ -24,17 +24,21 @@ const Imagediv=styled(Box)(({theme})=>({
 }
 }))
 const Image=styled('img')(({theme})=>({
-  marginLeft:"50px",
+  marginLeft:"30px",
   height:"400px",
+  width:"450px",
   objectFit:"contain",
   [theme.breakpoints.down('lg')]:{
+    width:"400px",
     height:"400px",
     marginLeft:"60px",
    
   },
   [theme.breakpoints.down('sm')]:{
-    marginLeft:"65px",
-    height:"300px"
+    marginLeft:"40px",
+    width:"350px",
+    height:"300px",
+    objectFit:"contain"
   }
 }))
 const Addcart=styled(Box)(({theme})=>({
@@ -47,7 +51,7 @@ const Addcart=styled(Box)(({theme})=>({
     margin:"10px 0"
   },
   [theme.breakpoints.down('sm')]:{
-    margin:"10px 0 0 0px",
+    margin:"10px 0 0 30px",
     width:"50%"
   }
 
@@ -78,8 +82,8 @@ export const ActionItem = ({users}) => {
         <Image src={users.img}></Image>
         </Imagediv>
         <Addcart>
-        <Button variant='contained' sx={{width:"225px",minWidth:"150px",height:"50px",backgroundColor:"orange"}} onClick={()=>(handleClick(users))}><Cart/>Add to Cart</Button>
-        <Button variant='contained' sx={{width:"225px",minWidth:"150px",marginLeft:"40px",backgroundColor:"red"}} onClick={()=>handlecart(users.newPrice)}><Flash style={{marginTop:"10px"} } />Buy Now</Button>
+        <Button variant='contained' sx={{width:"225px",minWidth:"160px",height:"50px",backgroundColor:"orange"}} onClick={()=>(handleClick(users))}><Cart/>Add to Cart</Button>
+        <Button variant='contained' sx={{width:"225px",minWidth:"160px",marginLeft:"40px",backgroundColor:"red"}} onClick={()=>handlecart(users.newPrice)}><Flash style={{marginTop:"10px"} } />Buy Now</Button>
         </Addcart>
     </LeftContainer>
     }

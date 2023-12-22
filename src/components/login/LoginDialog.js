@@ -5,26 +5,86 @@ import styled from '@emotion/styled';
 import { DataContext } from '../../App';
 import { authenticateLogin, authenticateSignup } from '../service/api';
 
-const Component=styled(Box)`
-width:100vh;
-height:70vh;
-display:flex
-`
-const Leftbar=styled(Box)`
-width:40%;
-height:100%;
-background-color:#2874f0;
-`
-const Rightbar=styled(Box)`
-display:flex;
-flex-direction:column;
-padding:25px 60px 0 60px;
-`
-const Text=styled(TextField)`
-margin-top:15px;
- width:300px;
- margin-bottom:10px
-`
+const Component=styled(Box)(({theme})=>({
+  width:"100vh",
+  height:"70vh",
+  display:"flex",
+  [theme.breakpoints.down('sm')]:{
+  width:"55vh" 
+  }
+}))
+const Leftbar=styled(Box)(({theme})=>({
+  width:"40%",
+  height:"100%",
+  backgroundColor:"#2874f0",
+  [theme.breakpoints.down('sm')]:{
+     width:"35%",
+    }
+  }))
+  const Typo=styled(Typography)(({theme})=>({
+    margin:"40px 10px 0 30px",
+    color:"white",
+    [theme.breakpoints.down('sm')]:{
+      margin:"150px 10px 0 25px",
+      fontSize:"25px",
+      }
+    }))
+  const Typo1=styled(Typography)(({theme})=>({
+    margin:"10px 10px 0 30px",
+    fontSize:"17px",
+    color:"white",
+      [theme.breakpoints.down('sm')]:{
+        margin:"10px 3px 0 15px",
+        fontSize:"14px"
+        }
+      }))
+      const Typog=styled(Typography)(({theme})=>({
+        margin:"20px 0 0 160px",
+          [theme.breakpoints.down('sm')]:{
+            margin:"20px 0 0 100px"
+            }
+          }))
+          const Typogr=styled(Typography)(({theme})=>({
+            color:"#2874f0",margin:"100px 0 0 70px",fontSize:"15px",cursor:"pointer",
+              [theme.breakpoints.down('sm')]:{
+                margin:"100px 0 0 10px",
+                fontSize:"14px"
+                }
+              }))
+  const Img=styled('img')(({theme})=>({
+    margin:"160px 10px 0 37px",
+    width:"200px",
+    [theme.breakpoints.down('sm')]:{
+      margin:"100px 10px 0 10px",
+        width:"120px"
+            }
+          }))
+  
+const Rightbar=styled(Box)(({theme})=>({
+display:"flex",
+flexDirection:"column",
+padding:"25px 60px 0 60px",
+[theme.breakpoints.down('sm')]:{
+ padding:"15px 15px 0 25px",
+ width:"65%",
+        }
+      }))
+const Text=styled(TextField)(({theme})=>({
+marginTop:"15px",
+ width:"300px",
+ marginBottom:"10px",
+ [theme.breakpoints.down('sm')]:{
+     width:"230px"
+         }
+       }))
+const Buttons=styled(Button)(({theme})=>({
+        width:"350px",
+        marginTop:"20px",
+         [theme.breakpoints.down('sm')]:{
+          marginLeft:"15px",
+             width:"200px"
+                 }
+               }))
 const Terms=styled(Typography)`
 font-size:11px
 `
@@ -36,7 +96,7 @@ const accountInitialvalues={
   },
   Signup:{
     view:"Signup",
-    heading:"Looks like you're new here!",
+    heading:"SignUp",
     subheading:"Sign up with your mobile number to get started"
   }
 }
@@ -107,9 +167,9 @@ export default function LoginDialog({open,setopen}) {
     <Dialog open={open} onClose={handelClose} PaperProps={{sx:{maxWidth:'unset'}}}>
     <Component>
        <Leftbar>
-         <Typography variant='h5' style={{margin:"40px 10px 0 30px",color:"white"}}>{account.heading}</Typography>
-         <Typography variant='h6' style={{margin:"10px 10px 0 30px",fontSize:"17px",color:"white"}}>{account.subheading}</Typography>
-         <img src={image} alt='Login' style={{margin:"160px 10px 0 37px"}}></img>
+         <Typo variant='h5'>{account.heading}</Typo>
+         <Typo1 variant='h6'>{account.subheading}</Typo1>
+         <Img src={image} alt='Login'></Img>
         </Leftbar>
         { account.view === 'Login'?
         <Rightbar>
@@ -117,6 +177,7 @@ export default function LoginDialog({open,setopen}) {
           <>
         <Text variant='standard' label="Enter Mobile number" name="Mobile" onChange={onvaluechange}></Text>
         <Text variant='standard' label="Enter Password" name="Password" onChange={onvaluechange}></Text>
+        <Terms>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Terms>
         </>
           : 
           <>
@@ -137,9 +198,9 @@ export default function LoginDialog({open,setopen}) {
           </>
         }
         <Button style={{textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white'} } onClick={Loginuser}>LOGIN</Button>
-        <Typography style={{margin:"20px 0 0 160px"}}>OR</Typography>
+        <Typog>OR</Typog>
         <Button style={{textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white'}}>Request OTP</Button>
-        <Typography style={{color:"#2874f0",margin:"100px 0 0 70px",fontSize:"15px",cursor:"pointer"} } onClick={handleLogin}>New to Flipkart? Create an account</Typography>
+        <Typogr onClick={handleLogin}>New to Flipkart? Create an account</Typogr>
         
         </Rightbar>
        
@@ -152,8 +213,8 @@ export default function LoginDialog({open,setopen}) {
         <Text variant='standard' label="Enter Password" name='Password' onChange={handlechange} required></Text>
         <Terms>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Terms>
         {validuser ? <></>: <Typography style={{color:"red",fontSize:"15px",textAlign:"center"}}>User exit. Please login to your account</Typography>}
-        <Button style={{textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white'} } onClick={formsubmit}>CONTINUE</Button>
-        <Button style={{textTransform:'capitalize',color:"#2874f0",margin:"20px 0 0 0",fontSize:"15px",cursor:"pointer",boxShadow:"0.2px 0.2px 1px black"}} onClick={handlesignup}>Existing User? Log in</Button>
+        <Buttons style={{textTransform:'capitalize',backgroundColor:"red",color:'white'} } onClick={formsubmit}>CONTINUE</Buttons>
+        <Buttons style={{textTransform:'capitalize',color:"#2874f0",fontSize:"15px",cursor:"pointer",boxShadow:"0.2px 0.2px 1px black"}} onClick={handlesignup}>Existing User? Log in</Buttons>
         </Rightbar>
    }
     </Component>

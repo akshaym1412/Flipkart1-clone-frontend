@@ -16,7 +16,7 @@ const Wrapper=styled(Box)(({theme})=>({
   display: 'flex',
   justifyContent:"space-between",
   [theme.breakpoints.down('md')]: {
-    display: 'block'
+    // display: 'block'
 }
 
 }))

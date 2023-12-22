@@ -39,6 +39,7 @@ const ImageDiv=styled(Box)(({theme})=>({
     marginLeft:"100px"
   },
   [theme.breakpoints.down("sm")]:{
+    objectFit:"cover",
     marginLeft:0
    }
 }))
