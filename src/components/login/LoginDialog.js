@@ -18,8 +18,7 @@ const Leftbar=styled(Box)(({theme})=>({
   height:"100%",
   backgroundColor:"#2874f0",
   [theme.breakpoints.down('sm')]:{
-     width:"35%",
-     display:"none"
+     width:"25%",
     }
   }))
   const Typo=styled(Typography)(({theme})=>({
@@ -27,7 +26,7 @@ const Leftbar=styled(Box)(({theme})=>({
     color:"white",
     [theme.breakpoints.down('sm')]:{
       margin:"150px 10px 0 25px",
-      fontSize:"25px",
+      fontSize:"20px",
       }
     }))
   const Typo1=styled(Typography)(({theme})=>({
@@ -42,14 +41,14 @@ const Leftbar=styled(Box)(({theme})=>({
       const Typog=styled(Typography)(({theme})=>({
         margin:"20px 0 0 160px",
           [theme.breakpoints.down('sm')]:{
-            margin:"20px 0 0 100px"
+            margin:"20px 0 0 75px"
             }
           }))
           const Typogr=styled(Typography)(({theme})=>({
             color:"#2874f0",margin:"100px 0 0 70px",fontSize:"15px",cursor:"pointer",
               [theme.breakpoints.down('sm')]:{
                 margin:"100px 0 0 10px",
-                fontSize:"14px"
+                fontSize:"10px"
                 }
               }))
   const Img=styled('img')(({theme})=>({
@@ -57,7 +56,7 @@ const Leftbar=styled(Box)(({theme})=>({
     width:"200px",
     [theme.breakpoints.down('sm')]:{
       margin:"100px 10px 0 10px",
-        width:"120px"
+        width:"90px"
             }
           }))
   
@@ -75,7 +74,7 @@ marginTop:"15px",
  width:"300px",
  marginBottom:"10px",
  [theme.breakpoints.down('sm')]:{
-     width:"230px"
+     width:"170px"
          }
        }))
 const Buttons=styled(Button)(({theme})=>({
@@ -83,12 +82,21 @@ const Buttons=styled(Button)(({theme})=>({
         marginTop:"20px",
          [theme.breakpoints.down('sm')]:{
           marginLeft:"15px",
-             width:"200px"
+             width:"170px"
                  }
                }))
-const Terms=styled(Typography)`
-font-size:11px
-`
+const Buttonss=styled(Button)(({theme})=>({
+        textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white',
+         [theme.breakpoints.down('sm')]:{
+             width:"170px"
+                 }
+               }))
+const Terms=styled(Typography)(({theme})=>({
+fontSize:"11px",
+[theme.breakpoints.down('sm')]:{
+             width:"180px",
+                 }
+               }))
 const accountInitialvalues={
   Login:{
     view:"Login",
@@ -186,7 +194,7 @@ export default function LoginDialog({open,setopen}) {
             validpassword ? 
             <><Text variant='standard' label="Enter Mobile number" name="Mobile" onChange={onvaluechange}></Text>
             <Text variant='standard' label="Enter Password" name="Password" onChange={onvaluechange}></Text>
-            <Terms>By continuing, you agree to Flipkart's Terms of Use and Privacy Policy.</Terms>
+            <Terms>By continuing, you agree to Flipkart's Terms</Terms>
             <Typography style={{color:"red",fontSize:"15px",textAlign:"center"}}>User doesn't exit. Please create account</Typography></>
             :
           <>
@@ -198,9 +206,9 @@ export default function LoginDialog({open,setopen}) {
         } 
           </>
         }
-        <Button style={{textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white'} } onClick={Loginuser}>LOGIN</Button>
+        <Buttonss onClick={Loginuser}>LOGIN</Buttonss>
         <Typog>OR</Typog>
-        <Button style={{textTransform:'capitalize',backgroundColor:"red",marginTop:"20px",color:'white'}}>Request OTP</Button>
+        <Buttonss>Request OTP</Buttonss>
         <Typogr onClick={handleLogin}>New to Flipkart? Create an account</Typogr>
         
         </Rightbar>
