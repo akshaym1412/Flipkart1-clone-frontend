@@ -28,7 +28,10 @@ backgroundColor:"#FFFFFF"
   height:"100vh",
   backgroundColor:"#FFFFFF",
   padding:"10px"
-  }
+  },
+  [theme.breakpoints.down("sm")]:{
+    margin:"65px 10px 0 10px"
+   }
 }
 ))
 const ImageDiv=styled(Box)(({theme})=>({

@@ -6,6 +6,7 @@ import CustomButtons from './CustomButtons';
 import Search from './Search';
 import { Link } from 'react-router-dom';
 import { Menu } from '@mui/icons-material';
+import CloseIcon from '@mui/icons-material/Close';
 
 const Mainbar=styled(AppBar)`
     background:#2874f0;
@@ -38,7 +39,7 @@ const CustomButtonWrapper = styled(Box)(({ theme }) => ({
 const MenuButton = styled(IconButton)(({ theme }) => ({
     display: 'none',
     [theme.breakpoints.down('md')]: {
-        marginLeft:"30%",
+        marginLeft:"8%",
         display: 'block'
     }
 }));
@@ -59,7 +60,7 @@ const Header=()=>{
 
 
     const list = () => (
-        <Box style={{ width: 250 }} onClick={handleClose}>
+        <Box style={{ width: 250 }} >
             <List>
                 <listItem button>
                     <CustomButtons />
@@ -86,11 +87,14 @@ const Header=()=>{
                 </CustomButtonWrapper>
                <MenuButton
                     color="inherit"
+                    size="large"
+                    style={{ fontSize: '2.5rem' }}
                     onClick={handleOpen}
                 >
-                    <Menu />
+                    <Menu fontSize="inherit"/>
                 </MenuButton>
-                <Drawer open={open} anchor='right' onClose={handleClose}>
+                <Drawer open={open} anchor='left' >
+                <CloseIcon style={{marginLeft:"210px"}} onClick={handleClose}/>
                     {list()}
                 </Drawer>
             </Toolbar>

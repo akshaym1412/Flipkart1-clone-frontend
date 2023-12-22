@@ -4,29 +4,37 @@ import { InputBase,ListItem,List,Box,styled} from '@mui/material';
 import data from '../images/data';
 import { Link } from 'react-router-dom';
 
-const Searchbox=styled(Box)`
-background:#fff;
-width:100%;
-margin:0 0 8px 10px;
-border-radius:2px;
-display:flex;
-`
-const InputSearchBase=styled(InputBase)`
-padding-left:20px;
-width:100%
-
-`
+const Searchbox=styled(Box)(({theme})=>({
+  background:"#fff",
+  width:"580px",
+  margin:"0 0 8px 10px",
+  borderRadius:"2px",
+  display:"flex",
+  [theme.breakpoints.down("sm")]:{
+    width:"300px",
+  }
+  }))
+const InputSearchBase=styled(InputBase)(({theme})=>({
+    paddingLeft:"20px",
+    width:"100%",
+    [theme.breakpoints.down("sm")]:{
+      width:"100%",
+    }
+    }))
 const SearchIconwrapper=styled(Box)`
 color:blue;
 padding:5px;
 `
-const ListWrapper = styled(List)`
-  position: absolute;
-  color: #000;
-  width:800px;
-  background: #FFFFFF;
-  margin-top: 43px;
-`;
+const ListWrapper = styled(List)(({theme})=>({
+  position:"absolute",
+  color: "#000",
+  width:"580px",
+  background: "#FFFFFF",
+  marginTop:"43px",
+  [theme.breakpoints.down("sm")]:{
+    width:"235px",
+  }
+  }))
 
 export default function Search() {
   const [ text, setText ] = useState();
