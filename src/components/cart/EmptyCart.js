@@ -1,13 +1,17 @@
 
 import { Typography, Box, styled } from '@mui/material';
 
-const Component = styled(Box)`
-    width: 80%%;
-    height: 65vh;
-    background: #fff;
-    margin: 80px 140px;
-`;
-
+const Component = styled(Box)(({theme})=>({
+    width: "80%",
+    height: "65vh",
+    background: "#fff",
+    margin: "80px 140px",
+    [theme.breakpoints.down('sm')]:{
+        width:"95%",
+        height:"40vh",
+        margin:"80px auto"
+    }
+}))
 const Container = styled(Box)`
     text-align: center;
     padding-top: 70px;
