@@ -10,7 +10,8 @@ const Component=styled(Box)(({theme})=>({
   height:"70vh",
   display:"flex",
   [theme.breakpoints.down('sm')]:{
-  width:"55vh" 
+  width:"55vh", 
+  overflowX:"hidden"
   }
 }))
 const Leftbar=styled(Box)(({theme})=>({
@@ -66,7 +67,7 @@ flexDirection:"column",
 padding:"25px 60px 0 60px",
 [theme.breakpoints.down('sm')]:{
  padding:"15px 15px 0 25px",
- width:"65%",
+ width:"45%",
         }
       }))
 const Text=styled(TextField)(({theme})=>({
